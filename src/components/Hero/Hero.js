@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Typewriter from "typewriter-effect";
 import {
   Section,
   SectionText,
@@ -13,7 +14,17 @@ const Hero = (props) => (
     <Section row nopadding>
       <LeftSection>
         <SectionTitle main center>
-          Hello, I'm Andrew!
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+
+                .typeString("Hello, I'm Andrew!")
+                .pauseFor(100)
+                .deleteAll()
+                .typeString("Welcome to my portfolio!")
+                .start();
+            }}
+          />
         </SectionTitle>
         <SectionTitle>
           <img
